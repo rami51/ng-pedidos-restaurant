@@ -1,3 +1,44 @@
-<p>
-  permisos works!
-</p>
+<div class="container">
+  <hr>
+  <p class="h3">Permisos</p>
+  <hr>
+  <div>
+    <form style="margin-left: 10px;">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="codigo">Código</label>
+            <input type="text" class="form-control" id="codigo">
+          </div> 
+        </div>
+        <div class="btn-group col-sm-3 offset-sm-9">
+          <button type="button" class="btn btn-success" (click)="addNew()"><i class="fa fa-plus"></i></button>
+          <button type="button" class="btn btn-danger"><i class="fa fa-undo"></i></button>
+          <button type="button" class="btn btn-info"><i class="fa fa-search"></i></button>
+        </div>
+    </form>
+  </div>
+  <hr>
+  <div id="resultados">
+    <table class="table table-striped table-bordered">
+      <thead class="thead-">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Código</th>
+          <th scope="col">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let permiso of permisos" >
+          <th scope="row">{{permisos.indexOf(permiso) + 1}}</th>
+          <td>{{permiso.codigo}}</td>
+          <td>
+            <div class="btn-group col-sm-8 offset-sm-2 text-center">
+              <button type="button" class="btn btn-info center-block"><i class="fa fa-pencil"></i></button>
+              <button type="button" class="btn btn-danger center-block"><i class="fa fa-trash-o"></i></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
